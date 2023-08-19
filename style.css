@@ -90,8 +90,8 @@ body {
 header {
   background: var(--blue);
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   color: var(--ivory);
   text-transform: uppercase;
@@ -102,6 +102,7 @@ header h1 {
   font-weight: 600;
   border-bottom: 3px solid var(--red);
   padding-bottom: 10px;
+  text-align: center;
 }
 .logo {
   display: flex;
@@ -121,14 +122,18 @@ header h1 {
 .nav,
 .nav ul {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  margin-top: 1em;
+}
+.nav li {
+  margin-top: 20px;
 }
 .nav li a {
   color: var(--ivory);
   text-decoration: none;
-  font-size: 1.5em;
-  font-weight: 400;
-  padding: 0 30px;
+  font-size: 1.4em;
+  font-weight: 500;
 }
 .nav li a:hover {
   color: var(--grey);
@@ -158,8 +163,11 @@ figure {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  width: 100%;
   padding-bottom: 40px;
+}
+figure img {
+  width: 100%;
 }
 figure .caption {
   color: var(--blue);
@@ -174,9 +182,10 @@ figure .caption {
   font-size: 3em;
   font-weight: 800;
   padding-bottom: 20px;
+  text-align: center;
 }
 .team-desc {
-  width: 55%;
+  width: 75%;
   font-size: 1.2em;
   font-weight: 500;
   text-align: center;
@@ -223,7 +232,7 @@ footer p {
 /* Bios */
 .meet h1 {
   color: var(--red);
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: 800;
   text-transform: uppercase;
   border-bottom: 3px solid var(--blue);
@@ -233,12 +242,14 @@ footer p {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   width: 80%;
   padding-bottom: 50px;
 }
 .member {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   padding: 50px 0 0;
 }
 .member img {
@@ -263,7 +274,6 @@ footer p {
 .name {
   font-size: 2.5em;
   font-weight: 500;
-  /* padding-bottom: 1em; */
 }
 .bio-list li {
   list-style: disc inside;
@@ -274,5 +284,70 @@ footer p {
 }
 /* Contact */
 .google-form {
-  margin-top: 50px;
+  margin-top: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* MEDIA QUERIES */
+/* Tablet */
+@media only screen and (min-width: 768px) {
+  .nav,
+  .nav ul {
+    flex-direction: row;
+  }
+  .nav li {
+    padding: 20px;
+  }
+  .nav li a {
+    font-size: 1.6em;
+  }
+  figure .caption {
+    width: 80%;
+  }
+}
+/* Desktop */
+@media only screen and (min-width: 1200px) {
+  /* Header */
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav,
+  .nav ul {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+  }
+  .nav li {
+    margin-top: 0;
+  }
+  .nav li a {
+    font-size: 1.5em;
+    font-weight: 400;
+  }
+  /* Main */
+  figure {
+    width: 60%;
+  }
+  .team-desc {
+    width: 55%;
+  }
+  /* Bios */
+  .meet h1 {
+    font-size: 2.5em;
+  }
+  .member {
+    flex-direction: row;
+  }
+  .member img {
+    width: 250px;
+    height: auto;
+  }
+  .member-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+  }
 }
