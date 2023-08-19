@@ -272,3 +272,7 @@ footer p {
   text-indent: -1.3em;
   padding-left: 1em;
 }
+/* Contact */
+.google-form {
+  margin-top: 50px;
+}
